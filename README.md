@@ -14,6 +14,7 @@ Current Plan
 ## Frontend
 + underscore, jQuery, backbone (if necessary)
 + twitter bootstrap
++ Text Editing Widget: [wysihtml5](https://github.com/xing/wysihtml5)
 
 Interesting Libraries
 ==========
