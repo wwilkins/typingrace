@@ -10,9 +10,9 @@
         <text>Kick%20Ass%20Logo</text>
       </controlProperties>
     </control>
-    <control controlID="2" controlTypeID="com.balsamiq.mockups::Title" x="417" y="132" w="973" h="-1" measuredW="863" measuredH="50" zOrder="2" locked="false" isInGroup="-1">
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Title" x="417" y="132" w="973" h="-1" measuredW="850" measuredH="50" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Super%20Awesome%20Typing%20Race%20Fun%20Time%20Go%20Kiya%21</text>
+        <text>Super%20Awesome%20Typing%20Race%20Fun%20Time%20Go%20Kiai%21</text>
       </controlProperties>
     </control>
     <control controlID="6" controlTypeID="com.balsamiq.mockups::SubTitle" x="606" y="510" w="-1" h="-1" measuredW="179" measuredH="33" zOrder="4" locked="false" isInGroup="-1">
