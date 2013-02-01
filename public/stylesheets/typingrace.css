@@ -17,6 +17,15 @@ body {
     text-align: center;
 }
 
+.handle {
+    background: url("/images/YouIcon.png") no-repeat scroll 0 0 transparent;
+    height: 32px;
+    line-height: 32px;
+    text-indent: 32px;
+}
+.handle-opponent {
+    background: url("/images/OpponentIcon.png") no-repeat scroll 0 0 transparent;
+}
 
 .row-prompt textarea,
 .game-input textarea {
