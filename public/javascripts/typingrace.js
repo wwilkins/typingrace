@@ -38,6 +38,8 @@ TR.Textbox = function (el) {
                 $('body').removeClass('red');
             }, 50);
             e.preventDefault();
+        } else {
+            now.playerTextDidUpdate(now.playerId, this.value);
         };
     }, this));
     return this;
