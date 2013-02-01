@@ -1,3 +1,4 @@
+if (typeof(TR)==='undefined') var TR={};
 
 soundManager.url = 'javascripts/';
 soundManager.flashVersion = 9; // optional: shiny features (default = 8)
