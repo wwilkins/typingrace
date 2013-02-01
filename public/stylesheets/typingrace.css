@@ -1,3 +1,32 @@
 body {
+    background-color: #222;
+}
 
+.container-main {
+    background-color: #fff;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-radius: 10px;
+}
+
+.header-main {
+    margin: 1em 0 3em;
+}
+.header-main h1 {
+    color: #444;
+    text-align: center;
+}
+
+
+.row-prompt textarea,
+.game-input textarea {
+    width: 95%;
+    height: 10em;
+}
+
+
+
+.footer-main {
+    margin: 2em 0 1em;
+    text-align: center;
 }
