@@ -16,8 +16,7 @@ now.playerTextDidUpdate = function(playerId, text) {
   $('textbox#other').val(text);
 };
 
-
-  TR.prepareGame = function () {
+TR.prepareGame = function () {
     TR.quote = quotes[Math.floor(Math.random()*6)];
 };
 
