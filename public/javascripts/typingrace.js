@@ -12,6 +12,8 @@ now.gameDidEnd = function() {
 now.playerTextDidUpdate = function(playerId, text) {
   console.log(playerId);
   console.log(text);
+  $('.progress-other .bar').width(TR.progressPercent(text.length));
+  $('textbox#other').val(text);
 };
 
 
@@ -37,6 +39,7 @@ TR.Textbox = function (el) {
             }, 50);
             e.preventDefault();
         } else {
+            $('.progress-you .bar').width(TR.progressPercent(this.valueLength));
             now.playerTextDidUpdate(now.playerId, this.value);
         };
     }, this));
@@ -46,6 +49,12 @@ TR.Textbox = function (el) {
 TR.Textbox.prototype = {
     hi: function () { console.log("HEAY")}
 };
+
+TR.progressPercent = function (textLength) {
+    var val = Math.floor((textLength / TR.quote.length) * 100).toString() + "%";
+    console.log(val);
+    return val;
+}
 
 $(document).ready(function(e) {
     TR.prepareGame();
