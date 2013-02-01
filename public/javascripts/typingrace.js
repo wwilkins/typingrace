@@ -20,7 +20,7 @@ now.playerTextDidUpdate = function(playerId, text) {
 
 now.playerDidConnect = function () {
   TR.quote = now.game.text;
-  if (now.game.isFull()) {
+  if (now.game.players.length > 1) {
     TR.startGame();
   }
 }

@@ -11,7 +11,7 @@ var Game = function (now) {
     id : id,
     players : [],
     isFull : function () {
-      return (players.length === 2);
+      return (players.length >= 2);
     },
     addPlayer : function(now, clientId) {
      console.log(clientId);
