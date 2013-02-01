@@ -22,12 +22,8 @@ everyone = nowjs.initialize(app);
 
 
 
-var GameManager = new require('./game_manager.js').gameManager() ;
-
-function uniqueGameId () {
-  return
-}
+var GameManager = new require('./game_manager.js').gameManager(nowjs) ;
 
 everyone.now.connectToGame = function() {
- GameManager.connectToGame(this.now);
+ GameManager.connectToGame(this.now, this.user.clientId);
 };
