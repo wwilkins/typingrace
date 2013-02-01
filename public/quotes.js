@@ -1,4 +1,4 @@
-{
+quotes = {
   "1": "By method and discipline are to be understood the marshaling of
 the army in its proper subdivisions, the graduations of rank among
 the officers, the maintenance of roads by which supplies may reach
@@ -32,4 +32,4 @@ men.",
 exhausted and your treasure spent, other chieftains will spring up
 to take advantage of your extremity. Then no man, however wise, will
 be able to avert the consequences that must ensue."
-}
+};
