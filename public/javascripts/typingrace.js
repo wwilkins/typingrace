@@ -1,7 +1,9 @@
 TR = {};
 
 TR.signIn = function (name) {
-  now.connectToGame();
+    now.ready(function(){
+      now.connectToGame();
+  });
 }
 
 // now functions
@@ -16,8 +18,15 @@ now.playerTextDidUpdate = function(playerId, text) {
   $('textbox#other').val(text);
 };
 
+now.playerDidConnect = function () {
+  TR.quote = now.game.text;
+  if (now.game.isFull()) {
+    TR.startGame();
+  }
+}
+
 TR.prepareGame = function () {
-    TR.quote = quotes[Math.floor(Math.random()*6)];
+    TR.quote = now.game.text;
 };
 
 TR.startGame = function () {
@@ -56,6 +65,5 @@ TR.progressPercent = function (textLength) {
 }
 
 $(document).ready(function(e) {
-    TR.prepareGame();
-    TR.startGame();
+    TR.signIn();
 });

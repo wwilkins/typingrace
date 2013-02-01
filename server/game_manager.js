@@ -19,6 +19,7 @@ var Game = function (now) {
       now.playerId = clientId;
      now.game = this;
      group.addUser(clientId);
+      group.now.playerDidConnect();
     },
     end : function() {
       group.now.gameDidEnd();
@@ -29,7 +30,8 @@ var Game = function (now) {
       if (text === quote) {
         this.end();
       }
-    }
+    },
+    text: quote
   };
 };
 
