@@ -20,5 +20,14 @@ app.listen(3000, function () {
 
 everyone = nowjs.initialize(app);
 
-everyone.now.startGame = function() {
+
+
+var GameManager = new require('./game_manager.js').gameManager() ;
+
+function uniqueGameId () {
+  return
+}
+
+everyone.now.connectToGame = function() {
+ GameManager.connectToGame(this.now);
 };
