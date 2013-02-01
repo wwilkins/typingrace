@@ -1,6 +1,8 @@
 $(document).ready(function(e){
 
-
+	if (TR === undefined) {
+		TR = {};
+	};
 
 	TR.initSound(function() {
 
