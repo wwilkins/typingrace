@@ -26,7 +26,8 @@ var Game = function (now) {
     },
     updatePlayerText : function (playerId, text) {
       enteredText[playerId] = text;
-      group.now.playerTextDidUpdate(enteredText);
+
+      group.now.playerTextDidUpdate(playerId, text);
       if (text === quote) {
         this.end();
       }

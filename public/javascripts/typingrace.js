@@ -12,10 +12,10 @@ now.gameDidEnd = function() {
 };
 
 now.playerTextDidUpdate = function(playerId, text) {
-  console.log(playerId);
-  console.log(text);
   $('.progress-other .bar').width(TR.progressPercent(text.length));
-  $('textbox#other').val(text);
+  if (playerId !== now.playerId) {
+    $("#opponent").value(text);
+  }
 };
 
 now.playerDidConnect = function () {
