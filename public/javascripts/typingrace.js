@@ -1,8 +1,3 @@
-$(document).ready(function(e) {
-    TR.prepareGame();
-    TR.startGame();
-});
-
 TR = {};
 
 TR.signIn = function (name) {
@@ -32,11 +27,9 @@ TR.startGame = function () {
 
 TR.Textbox = function (el) {
     this.el = $(el);
-    this.el.on('keydown', _.bind(function (e) {
+    this.el.on('keypress', _.bind(function (e) {
         this.value = this.el.val();
         this.valueLength = this.value.length;
-        console.log('keycode ' + e.keyCode);
-        console.log('should be ' + TR.quote[this.valueLength].charCodeAt());
         if (TR.quote[this.valueLength].charCodeAt() !== e.keyCode && e.keyCode !== 8 ) {
             $('body').addClass('red');
             _.delay(function () {
@@ -51,3 +44,8 @@ TR.Textbox = function (el) {
 TR.Textbox.prototype = {
     hi: function () { console.log("HEAY")}
 };
+
+$(document).ready(function(e) {
+    TR.prepareGame();
+    TR.startGame();
+});
