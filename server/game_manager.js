@@ -2,7 +2,8 @@ var crypto = require('crypto');
 
 var Game = function (now) {
   var id = crypto.createHash('md5').update((new Date).toString()).digest('hex');
-    group = now.getGroup(id);
+   var group = now.getGroup(id);
+   var enteredText = {};
 
   return {
     id : id,
@@ -13,11 +14,16 @@ var Game = function (now) {
     addPlayer : function(now, clientId) {
      console.log(clientId);
      this.players.push(clientId);
+      now.playerId = clientId;
      now.game = this;
      group.addUser(clientId);
     },
     end : function() {
       group.now.gameDidEnd();
+    },
+    updatePlayerText : function (playerId, text) {
+      enteredText[playerId] = text;
+      group.now.playerTextDidUpdate(enteredText);
     }
   };
 };
