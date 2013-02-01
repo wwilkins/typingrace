@@ -6,12 +6,21 @@ $(document).ready(function(e) {
 TR = {};
 
 TR.signIn = function (name) {
-    now.connectToGame();
-now.gameDidEnd = function() {
-  console.log("Game" + now.game.id + "Is Ending");
+  now.connectToGame();
 }
 
-TR.prepareGame = function () {
+// now functions
+now.gameDidEnd = function() {
+  console.log("Game" + now.game.id + "Is Ending");
+};
+
+now.playerTextDidUpdate = function(playerId, text) {
+  console.log(playerId);
+  console.log(text);
+};
+
+
+  TR.prepareGame = function () {
     TR.quote = quotes[Math.floor(Math.random()*6)];
 };
 
