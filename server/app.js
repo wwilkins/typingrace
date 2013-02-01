@@ -1,6 +1,6 @@
 var express = require('express'),
   app = module.exports = express.createServer(),
-  io = require('socket.io');
+  nowjs = require('now');
 
   // Configuration
 app.configure(function () {
@@ -18,11 +18,7 @@ app.listen(3000, function () {
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
 });
 
-io = io.listen(app);
+everyone = nowjs.initialize(app);
 
-io.sockets.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
-  socket.on('my other event', function (data) {
-    console.log(data);
-  });
-});
+everyone.now.startGame = function() {
+};
