@@ -46,7 +46,7 @@ $(document).ready(function(e){
 		});
 
 		TR.preloadSounds(sounds, function() {
-			//TR.playSound(('theme'));
+			TR.playSound(('theme'));
 
 			var playing = false;
 
