@@ -1,24 +1,33 @@
 var crypto = require('crypto');
 
-var Game = function () {
+var Game = function (now) {
   var id = crypto.createHash('md5').update((new Date).toString()).digest('hex');
+    group = now.getGroup(id);
+
   return {
     id : id,
     players : [],
     isFull : function () {
       return (players.length === 2);
     },
-    addPlayer : function(player) {
-     this.players.push(player);
-     player.game = this;
+    addPlayer : function(now, clientId) {
+     console.log(clientId);
+     this.players.push(clientId);
+     now.game = this;
+     group.addUser(clientId);
+    },
+    end : function() {
+      group.now.gameDidEnd();
     }
   };
 };
 
-module.exports.gameManager = function GameManager () {
-  var games = [];
+module.exports.gameManager = function GameManager (ddfadf, clientId) {
+  var games = [],
+    nowjs = ddfadf;
+
   return {
-    connectToGame : function (client) {
+    connectToGame : function (now, client) {
       var foundGame = undefined;
       games.forEach(function(game) {
         if (foundGame) return;
@@ -27,11 +36,21 @@ module.exports.gameManager = function GameManager () {
       });
 
       if (!foundGame) {
-        foundGame = new Game();
+        foundGame = new Game(nowjs);
         games.push(foundGame);
       }
 
-      foundGame.addPlayer(client);
+      foundGame.addPlayer(now, client);
+    },
+    endGame : function (gameId) {
+      var game = undefined;
+      games.forEach(function(g){
+        if (g.id === gameId) {
+          game = g;
+        }
+      });
+
+      games.end();
     }
   };
 }

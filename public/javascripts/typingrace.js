@@ -7,6 +7,8 @@ TR = {};
 
 TR.signIn = function (name) {
     now.connectToGame();
+now.gameDidEnd = function() {
+  console.log("Game" + now.game.id + "Is Ending");
 }
 
 TR.prepareGame = function () {
